@@ -1,0 +1,111 @@
+<!-- 文档类型为HTML -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 字符集为UTF-8 -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SJL Club</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/image_video.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+            box-sizing:border-box;
+        }
+        
+        body {  
+            position: relative; 
+            height: 100%;  
+            margin: 0;  
+            padding: 0;  
+        }  
+  
+        body::before {  
+            content: "";  
+            position: absolute;  
+            top: 0;  
+            left: 0;  
+            right: 0;  
+            bottom: 0;  
+            background-attachment: fixed;
+            background-image: url('img/美女2.jpg'); /* 注意路径中的斜杠方向 */  
+            background-size: cover;  
+            background-position: center;  
+            opacity: 0.5 ; /* 设置背景图片的透明度 */  
+            z-index: -1; /* 确保伪元素在内容之下 */  
+        }  
+        body > * {  
+            
+            position: relative; /* 或者使用其他布局方式确保内容可见 */  
+            z-index: 1; /*确保内容在伪元素之上 */  
+        }
+        #center{
+            width:94%;
+            margin:3%;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">AbstractBot</a> 
+        <nav>
+            <ul>
+                <li><a href="#">主页</a></li>
+                <li><a href="#">美女</a></li>
+                <li><a href="#">游戏</a></li>
+            </ul>
+        </nav>
+        <div>
+            <a href="#" class="button signin-button">登录</a>
+            <a href="#" class="button signup-button">注册</a>
+        </div>
+    </header>
+    <div class="box">
+        <div class="box-img"><img src="1.jpg" width="960" height="540"></div>
+        <div class="box-img"><img src="2.jpg" width="960" height="540"></div>
+        <div class="box-img"><img src="3.png" width="960" height="540"></div>
+        <div class="box-img"><img src="4.jpg" width="960" height="540"></div>
+        <div class="box-img"><img src="5.jpg" width="960" height="540"></div>
+        <div class="box-left">&lt;</div>
+        <div class="box-right">&gt;</div>
+        <div class="box-zhiding">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/event.js"></script>
+    <div id="center">
+        <h1>Welcome to SJL's Website</h1>
+        <p class="dir"><strong>网站内容</strong></p>
+        <p id="ins"><strong>美女大赏</strong></p> 
+        <div class="list_more">
+            <span class="left">推荐美女</span>
+            <span class="right">更多美女</span>
+        </div>
+        <div class="image-container">  
+            <div class="image-item"><img src="img\飞鸟 8K.jpg" alt="Image 1"></div>  
+            <div class="image-item"><img src="img\赵今麦 8K.jpg" alt="Image 2"></div>  
+            <div class="image-item"><img src="img\李知恩 8K.jpg" alt="Image 3"></div>
+        </div> 
+        <p id="ins"><strong>火影忍者</strong></p> 
+        <div class="list_more">
+            <span class="left">下饭视频</span>
+            <span class="right">更多视频</span>
+        </div>
+        <div class="video-container">  
+            <video src="video\huoying.mp4" controls></video>  
+        </div>
+    </div>    
+</body>
+</html>

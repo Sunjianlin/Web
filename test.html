@@ -1,0 +1,102 @@
+<!-- 文档类型为HTML -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 字符集为UTF-8 -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SJL Club</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/image_video.css">  
+    <style>
+        .carousel {  
+            position: relative;  
+            max-width: 600px; /* 或你需要的宽度 */  
+            margin: auto;  
+            overflow: hidden;  
+        }  
+  
+        .carousel-slides img {  
+            width: 100%;  
+            display: none;  
+        }  
+        
+        .carousel-slides img.active {  
+            display: block;  
+        }  
+  
+        .prev, .next {  
+            cursor: pointer;  
+            position: absolute;  
+            top: 50%;  
+            transform: translateY(-50%);  
+            padding: 16px;  
+            color: white;  
+            font-weight: bold;  
+            font-size: 18px;  
+            transition: 0.6s ease;  
+            border-radius: 0 3px 3px 0;  
+            user-select: none;  
+        }  
+  
+        .next {  
+            right: 0;  
+            border-radius: 3px 0 0 3px;  
+        }  
+        
+        .prev:hover, .next:hover {  
+            background-color: rgba(0,0,0,0.8);  
+        }
+    </style> 
+</head>
+<body>
+    <div class="carousel">  
+        <div class="carousel-slides">  
+            <img src="1.jpg" alt="Image 1" class="active">  
+            <img src="2.jpg" alt="Image 2">  
+            <img src="3.jpg" alt="Image 3">  
+        </div>  
+        <a class="prev" onclick="changeSlides(-1)">&#10094;</a>  
+        <a class="next" onclick="changeSlides(1)">&#10095;</a>  
+    </div>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){  
+        let slideIndex = 1;  
+        showSlides(slideIndex);  
+  
+    // 每2秒改变幻灯片  
+        setInterval(function(){   
+            plusSlides(1);   
+        }, 2000);  
+  
+    // 显示幻灯片  
+        function showSlides(n) {  
+            let i;  
+            let slides = $(".carousel-slides img");  
+            if (n > slides.length) {slideIndex = 1}      
+            if (n < 1) {slideIndex = slides.length}  
+            for (i = 0; i < slides.length; i++) {  
+                slides[i].style.display = "none";    
+            }  
+            slides[slideIndex-1].style.display = "block";    
+        }  
+  
+    // 前进到下一张幻灯片  
+        function plusSlides(n) {  
+            showSlides(slideIndex += n);  
+        }  
+  
+    // 绑定导航按钮的点击事件  
+        $('.prev').click(function(){  
+            plusSlides(-1);  
+        });  
+  
+        $('.next').click(function(){  
+            plusSlides(1);  
+        });  
+    });
+    </script>
+</body>
+</html>
